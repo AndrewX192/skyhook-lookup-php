@@ -1,4 +1,4 @@
 skyhook-lookup-php
 ==================
 
-SkyHook Lookup PHP
+Calls the Skyhook API with a given MAC address and retrieves a location.
