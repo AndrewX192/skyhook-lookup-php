@@ -1,6 +1,6 @@
 <?php
 /**
- * Calls the SkyHook API and retrieves a street address for a given MAC address.
+ * Calls the Skyhook API and retrieves a street address for a given MAC address.
  *
  * This program requires: PHP5 CLI with curl.
  *
@@ -8,10 +8,10 @@
  */
 
 $macAddress = 'D8C7C81CF2F8';
-$cls = new SkyHookLookup();
+$cls = new SkyhookLookup();
 echo $cls->doRequest($macAddress);
 
-class SkyHookLookup {
+class SkyhookLookup {
 
     /**
      * @var String The mac address to look up.
@@ -80,7 +80,7 @@ class SkyHookLookup {
         }
         $location = (array) $xml->location;
         $address = (array) $location['street-address'];
-        return "We found a result!\nMAC Address: \"" . $this->_macAddress . "\" was found in the SkyHook database, the location returned was:\n"
+        return "We found a result!\nMAC Address: \"" . $this->_macAddress . "\" was found in the Skyhook database, the location returned was:\n"
         . $address['street-number'] . " " . $address['address-line'] . "\n" . $address['city'] . ", " . $address['state'] . " " . $address['postal-code']."\n";
     }
 
